@@ -18,7 +18,7 @@ export function PreLoading({ children }: { children: React.ReactNode }) {
         setIsLoading(false);
         setTimeout(() => setFadeIn(true), 10);
       }, 500);
-    }, 7000);
+    }, 7500);
 
     return () => clearTimeout(timer);
   }, []);
