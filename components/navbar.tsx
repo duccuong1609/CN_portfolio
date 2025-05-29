@@ -14,6 +14,7 @@ import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import ResumeButton from "./button/resume-button";
 
@@ -26,6 +27,7 @@ import {
   // SearchIcon,
   // Logo,
 } from "@/components/icons";
+import { motionTime } from "@/config/motion.time";
 
 export const Navbar = () => {
   // const searchInput = (
@@ -53,10 +55,29 @@ export const Navbar = () => {
     <HeroUINavbar className="p-5" maxWidth="2xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Image alt="Logo" height={48} src={"/logo/logo.png"} width={48} />
-            <p className="font-bold text-inherit">CUONG NGUYEN</p>
-          </NextLink>
+          <motion.div
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, scale: 0 }}
+            transition={{
+              duration: motionTime.layout.motionDiv.duration,
+              delay: motionTime.layout.motionDiv.delay,
+            }}
+          >
+            <NextLink
+              className="flex justify-start items-center gap-1"
+              href="/"
+            >
+              <Image
+                alt="Logo"
+                className="transition-all !duration-500 ease-in-out hover:drop-shadow-[0_5px_5px_hsl(var(--heroui-primary))]"
+                height={48}
+                src={"/logo/logo.png"}
+                width={48}
+              />
+              <p className="font-bold text-inherit">CUONG NGUYEN</p>
+            </NextLink>
+          </motion.div>
         </NavbarBrand>
       </NavbarContent>
 
@@ -64,56 +85,59 @@ export const Navbar = () => {
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map((item, index) => (
             <NavbarItem key={item.href} className="px-1">
-              <NextLink
-                // className={clsx(
-                //   linkStyles({ color: "foreground" }),
-                //   "data-[active=true]:text-primary data-[active=true]:font-medium",
-                // )}
-                className="px-1 hover:text-primary transition-all !duration-1000 ease-in-out"
-                href={item.href}
+              <motion.div
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                initial={{ opacity: 0, y: -50 }}
+                transition={{
+                  duration: motionTime.layout.motionDiv.duration,
+                  delay:
+                    motionTime.layout.motionDiv.delay +
+                    motionTime.item.delay * index,
+                }}
               >
-                <span className="text-primary mr-1">{index + 1}.</span>
-                {item.label}
-              </NextLink>
+                <NextLink
+                  // className={clsx(
+                  //   linkStyles({ color: "foreground" }),
+                  //   "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  // )}
+                  className="px-1 hover:text-primary transition-all !duration-1000 ease-in-out"
+                  href={item.href}
+                >
+                  <span className="text-primary mr-1">{index + 1}.</span>
+                  {item.label}
+                </NextLink>
+              </motion.div>
             </NavbarItem>
           ))}
         </ul>
         {siteConfig.resume && (
           <NavbarItem className="hidden lg:flex">
-            <ResumeButton>
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
-                )}
-                color="foreground"
-                href={siteConfig.resume.href}
-              >
-                {siteConfig.resume.label}
-              </NextLink>
-            </ResumeButton>
+            <motion.div
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              initial={{ opacity: 0, y: -50 }}
+              transition={{
+                duration: motionTime.navbar.resumeButton.duration,
+                delay: motionTime.navbar.resumeButton.delay,
+              }}
+            >
+              <ResumeButton>
+                <NextLink
+                  className={clsx(
+                    linkStyles({ color: "foreground" }),
+                    "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  )}
+                  color="foreground"
+                  href={siteConfig.resume.href}
+                >
+                  {siteConfig.resume.label}
+                </NextLink>
+              </ResumeButton>
+            </motion.div>
           </NavbarItem>
         )}
       </NavbarContent>
-
-      {/* <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
-        justify="start"
-      >
-        <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
-          </Link>
-          <ThemeSwitch />
-        </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-      </NavbarContent> */}
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
         <Link isExternal aria-label="Github" href={siteConfig.links.github}>
@@ -134,7 +158,7 @@ export const Navbar = () => {
                     index === 2
                       ? "primary"
                       : index === siteConfig.navMenuItems.length - 1
-                        ? "danger"
+                        ? "primary"
                         : "foreground"
                   }
                   href="#"
@@ -146,22 +170,6 @@ export const Navbar = () => {
             </NavbarMenuItem>
           ))}
         </div>
-        {siteConfig.resume && (
-          <NavbarItem>
-            <ResumeButton className="w-full">
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
-                )}
-                color="foreground"
-                href={siteConfig.resume.href}
-              >
-                {siteConfig.resume.label}
-              </NextLink>
-            </ResumeButton>
-          </NavbarItem>
-        )}
       </NavbarMenu>
     </HeroUINavbar>
   );

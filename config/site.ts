@@ -39,8 +39,8 @@ export const siteConfig = {
       href: "/blog",
     },
     {
-      label: "Logout",
-      href: "/logout",
+      label: "Resume",
+      href: "/resume",
     },
   ],
   links: {

@@ -3,8 +3,13 @@
 import React from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { Link } from "@heroui/link";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { Navbar } from "../navbar";
+import { Sidebar } from "../sidebar";
+
+import { motionTime } from "@/config/motion.time";
+import { loadingTime } from "@/config/loading.time";
 
 export function PreLoading({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -16,9 +21,9 @@ export function PreLoading({ children }: { children: React.ReactNode }) {
       setFadeOut(true);
       setTimeout(() => {
         setIsLoading(false);
-        setTimeout(() => setFadeIn(true), 10);
-      }, 500);
-    }, 7500);
+        setTimeout(() => setFadeIn(true), loadingTime.fadeIn);
+      }, loadingTime.fadeOut);
+    }, loadingTime.loading);
 
     return () => clearTimeout(timer);
   }, []);
@@ -39,21 +44,58 @@ export function PreLoading({ children }: { children: React.ReactNode }) {
             fadeIn ? "opacity-100" : "opacity-0"
           }`}
         >
-          <Navbar />
-          <main className="container mx-auto pt-16 px-6 flex-grow">
-            {children}
-          </main>
-          <footer className="w-full flex items-center justify-center py-3">
-            <Link
-              isExternal
-              className="flex items-center gap-1 text-current"
-              href="https://heroui.com?utm_source=next-app-template"
-              title="heroui.com homepage"
+          <AnimatePresence mode="wait">
+            <motion.div
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              initial={{ opacity: 0 }}
+              transition={{ duration: motionTime.layout.motionDiv.duration }}
             >
-              <span className="text-default-600">Powered by</span>
-              <p className="text-primary">HeroUI</p>
-            </Link>
-          </footer>
+              <motion.nav
+                animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{
+                  duration: motionTime.layout.motionNav.duration,
+                  delay: motionTime.layout.motionNav.delay,
+                }}
+              >
+                <Navbar />
+              </motion.nav>
+              <motion.main
+                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: -50 }}
+                transition={{
+                  duration: motionTime.layout.motionMain.duration,
+                  delay: motionTime.layout.motionMain.delay,
+                }}
+              >
+                <main className="container mx-auto pt-16 px-6 flex-grow">
+                  {children}
+                </main>
+              </motion.main>
+              <motion.footer
+                animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{
+                  duration: motionTime.layout.motionFooter.duration,
+                  delay: motionTime.layout.motionFooter.delay,
+                }}
+              >
+                <Sidebar />
+                <footer className="w-full flex items-center justify-center py-3">
+                  <Link
+                    isExternal
+                    className="flex items-center gap-1 text-current"
+                    href="https://heroui.com?utm_source=next-app-template"
+                    title="heroui.com homepage"
+                  >
+                    <span className="text-default-600">Powered by</span>
+                    <p className="text-primary">HeroUI</p>
+                  </Link>
+                </footer>
+              </motion.footer>
+            </motion.div>
+          </AnimatePresence>
         </div>
       )}
     </>
