@@ -7,10 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { Navbar } from "../navbar";
 import { Sidebar } from "../sidebar";
+import ScrollAnimation from "../animation/scroll-hide";
 
 import { motionTime } from "@/config/motion.time";
 import { loadingTime } from "@/config/loading.time";
-import ScrollAnimation from "../animation/scroll-hide";
 
 export function PreLoading({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -33,15 +33,17 @@ export function PreLoading({ children }: { children: React.ReactNode }) {
     <>
       {isLoading ? (
         <div
-          className={`h-screen transition-opacity duration-500 ${fadeOut ? "opacity-0 pointer-events-none" : "opacity-100"
-            }`}
+          className={`h-screen transition-opacity duration-500 ${
+            fadeOut ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
         >
           <DotLottieReact autoplay src="loading.json" />
         </div>
       ) : (
         <div
-          className={`relative flex flex-col h-screen transition-opacity duration-500 ${fadeIn ? "opacity-100" : "opacity-0"
-            }`}
+          className={`relative flex flex-col h-screen transition-opacity duration-500 ${
+            fadeIn ? "opacity-100" : "opacity-0"
+          }`}
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -70,7 +72,7 @@ export function PreLoading({ children }: { children: React.ReactNode }) {
                   delay: motionTime.layout.motionMain.delay,
                 }}
               >
-                <main className="container mx-auto pt-28 lg:pt-28 px-6 flex-grow">
+                <main className="container mx-auto pt-10 lg:pt-0 px-6 flex-grow">
                   {children}
                 </main>
               </motion.main>

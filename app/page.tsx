@@ -1,34 +1,38 @@
 import { title, subtitle } from "@/components/primitives";
 import ResumeButton from "@/components/button/resume-button";
-import { About } from "@/components/about/about";
+import { About } from "@/components/agenda/about";
 import ScrollFadeIn from "@/components/animation/scroll-fade-in";
+import { Skill } from "@/components/agenda/skill";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 lg:py-8 md:py-10">
-      <div className="inline-block px-6 max-w-4xl text-left justify-center h-[calc(100vh-6rem)] lg:h-[calc(100vh-4rem)]">
+    <section className="flex flex-col items-center justify-center gap-4">
+      <div className="flex flex-col items-start px-6 max-w-4xl text-left justify-center min-h-[100vh] h-screen">
         <span className={subtitle({ class: "text-primary mb-4", size: "lg" })}>
           Hi, my name is&nbsp;
         </span>
-        <span className={title({ size: "xl" })}>Nguyen Duc&nbsp;</span>
-        <span className={title({ color: "cyan", size: "xl" })}>
-          Cuong.&nbsp;
+        <span className={title({ size: "xl" })}>
+          Nguyen Duc&nbsp;
+          <span className={title({ color: "cyan", size: "xl" })}>
+            Cuong.&nbsp;
+          </span>
         </span>
+
         <br />
-        <span className={title({ size: "xl", color: "foreground" })}>
+        <span
+          className={title({ size: "xl", color: "foreground", class: "-mt-4" })}
+        >
           I am fullstack developer.
         </span>
         <div
           className={subtitle({
-            class: "mt-8 text-clip max-w-2xl text-justify",
+            class: "mt-8 text-clip max-w-xl text-left",
             size: "xs",
           })}
         >
-          Hi there! I enjoy building web applications and discovering new
-          technologies along the way. This is my personal website where I share
-          the projects I’ve created, the things I’ve learned, and some thoughts
-          from my journey as a developer. It’s a space for me to document what I
-          care about and how I’ve grown through building and learning.
+          Hi there! I create web apps and enjoy learning new tech. This site is
+          where I share and growth as a developer. It’s a space for me to
+          reflect on my experiences, document what I’ve learned.
         </div>
         <ResumeButton
           className="text-sm lg:text-md my-8 py-3 lg:py-7 rounded-s rounded-e"
@@ -39,6 +43,9 @@ export default function Home() {
       </div>
       <ScrollFadeIn delay={0.1}>
         <About />
+      </ScrollFadeIn>
+      <ScrollFadeIn delay={0.1}>
+        <Skill />
       </ScrollFadeIn>
 
       {/* <div className="flex gap-3">

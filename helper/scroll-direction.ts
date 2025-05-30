@@ -23,6 +23,7 @@ export function useScrollDirection(threshold = 10) {
     };
 
     window.addEventListener("scroll", updateScrollDirection);
+
     return () => window.removeEventListener("scroll", updateScrollDirection);
   }, [scrollDirection, threshold]);
 
