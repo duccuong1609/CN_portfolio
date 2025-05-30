@@ -52,7 +52,7 @@ export const Navbar = () => {
   // );
 
   return (
-    <HeroUINavbar className="p-5" maxWidth="2xl" position="sticky">
+    <HeroUINavbar className="p-5 fixed" maxWidth="2xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <motion.div

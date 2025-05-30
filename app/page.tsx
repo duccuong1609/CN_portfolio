@@ -1,11 +1,12 @@
 import { title, subtitle } from "@/components/primitives";
 import ResumeButton from "@/components/button/resume-button";
 import { About } from "@/components/about/about";
+import ScrollFadeIn from "@/components/animation/scroll-fade-in";
 
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 lg:py-8 md:py-10">
-      <div className="inline-block px-6 max-w-4xl text-left justify-center h-screen">
+      <div className="inline-block px-6 max-w-4xl text-left justify-center h-[calc(100vh-6rem)] lg:h-[calc(100vh-4rem)]">
         <span className={subtitle({ class: "text-primary mb-4", size: "lg" })}>
           Hi, my name is&nbsp;
         </span>
@@ -36,7 +37,10 @@ export default function Home() {
           <div className="px-4">Check out my resume!</div>
         </ResumeButton>
       </div>
-      <About />
+      <ScrollFadeIn delay={0.1}>
+        <About />
+      </ScrollFadeIn>
+
       {/* <div className="flex gap-3">
         <Link
           isExternal

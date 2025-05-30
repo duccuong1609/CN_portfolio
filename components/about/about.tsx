@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export const About = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center w-full py-8 gap-10">
+    <div className="flex flex-col lg:flex-row items-center justify-center w-full py-8 gap-10 px-4 l">
       <div className="flex flex-col items-start justify-start gap-3">
-        <h2 className="flex items-center text-2xl font-bold mb-4">
+        <h2 className="flex items-center text-2xl font-bold mb-4 w-full">
           <span className="text-primary mr-3">01.</span>
           About Me
-          <span className="ml-4 h-px w-[200px] bg-slate-300 flex-1" />
+          <span className="ml-4 h-px w-full bg-slate-300 flex-1" />
         </h2>
         <div className="text-md text-justify max-w-xl">
           Hello! My name is Cuong, and I’m currently a Computer Science student
@@ -28,15 +28,11 @@ export const About = () => {
           technologies along the way. I’m especially passionate about building
           clean, accessible, and meaningful digital experiences.
         </div>
-        <div className="text-md text-justify max-w-xl">
-          Here are some of the tools and technologies I’ve been working with
-          recently:
-        </div>
       </div>
       <div className="relative after:content-[''] after:absolute after:top-[14px] hover:after:top-[24px] hover:after:left-[24px] transition-all duration-400 hover:-translate-x-2 hover:-translate-y-2 after:transition-all after:duration-400 after:left-[14px] after:w-full after:h-full after:border-2 after:border-primary after:rounded-lg after:-z-10 z-0">
         <Image
           alt="about"
-          className="rounded-lg"
+          className="rounded-lg border-2 border-primary"
           height={300}
           src="/about.jpg"
           width={300}
