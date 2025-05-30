@@ -9,8 +9,8 @@ import { siteConfig } from "@/config/site";
 
 export const Sidebar = () => {
   return (
-    <div className="hidden fixed bottom-0 lg:flex px-11 w-full justify-between">
-      <div className="z-50 flex flex-col items-center space-y-5">
+    <div className="hidden fixed bottom-0 lg:flex px-11 w-full justify-between pointer-events-none">
+      <div className="z-50 flex pointer-events-auto flex-col items-center space-y-5">
         <Link isExternal aria-label="Github" href={siteConfig.links.github}>
           <GithubIcon className="text-default-500 hover:text-primary transition-all duration-500 ease-in-out hover:-translate-y-1" />
         </Link>
@@ -35,7 +35,7 @@ export const Sidebar = () => {
         <ThemeSwitch />
         <div className="w-px h-[90px] bg-slate-300 mt-4" />
       </div>
-      <div className="z-50 flex flex-col items-center justify-between">
+      <div className="z-50 pointer-events-auto flex flex-col items-center justify-between">
         <Link
           className="text-default-500 hover:text-primary transition-all duration-500 ease-in-out hover:-translate-y-1"
           href="#"

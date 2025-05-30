@@ -122,7 +122,7 @@ export const Navbar = () => {
                 delay: motionTime.navbar.resumeButton.delay,
               }}
             >
-              <ResumeButton>
+              <ResumeButton className="rounded-sm">
                 <NextLink
                   className={clsx(
                     linkStyles({ color: "foreground" }),

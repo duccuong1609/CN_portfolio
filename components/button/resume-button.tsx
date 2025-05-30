@@ -6,6 +6,7 @@ import { ResumeButtonProps } from "@/dto/button-object";
 export default function ResumeButton({
   children,
   className = "",
+  size = "md",
   ...props
 }: ResumeButtonProps) {
   return (
@@ -22,6 +23,7 @@ export default function ResumeButton({
         ${className}
       `}
       radius="sm"
+      size={size}
       variant="ghost"
       {...props}
     >

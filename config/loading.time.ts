@@ -1,7 +1,7 @@
 export type LoadingTime = typeof loadingTime;
 
 export const loadingTime = {
-  loading: 7500,
+  loading: 500,
   fadeOut: 500,
   fadeIn: 10,
 };

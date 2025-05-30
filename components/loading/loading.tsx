@@ -69,7 +69,7 @@ export function PreLoading({ children }: { children: React.ReactNode }) {
                   delay: motionTime.layout.motionMain.delay,
                 }}
               >
-                <main className="container mx-auto pt-16 px-6 flex-grow">
+                <main className="container mx-auto pt-4 lg:pt-8 px-6 flex-grow">
                   {children}
                 </main>
               </motion.main>
