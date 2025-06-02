@@ -136,7 +136,7 @@ export const skillGroups = [
           {
             label: "Odoo",
             icon: <SiOdoo style={{ color: "#6d28d9" }} />,
-            progress: 70,
+            progress: 90,
           },
           {
             label: "TensorFlow",

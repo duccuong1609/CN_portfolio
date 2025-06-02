@@ -60,7 +60,15 @@ export const Skill = () => (
       ))}
     </div>
     <div className="flex lg:hidden w-full flex-col">
-      <Tabs aria-label="Options" className="transition-all duration-500">
+      <Tabs
+        aria-label="Options"
+        className="transition-all duration-500"
+        classNames={{
+          tabList: "w-[90vw] lg:w-full",
+        }}
+        color="primary"
+        variant="underlined"
+      >
         {skillGroups.map((group) => (
           <Tab
             key={group.title}

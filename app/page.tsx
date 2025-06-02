@@ -3,6 +3,8 @@ import ResumeButton from "@/components/button/resume-button";
 import { About } from "@/components/agenda/about";
 import ScrollFadeIn from "@/components/animation/scroll-fade-in";
 import { Skill } from "@/components/agenda/skill";
+import { Experience } from "@/components/agenda/experience";
+import { Work } from "@/components/agenda/work";
 
 export default function Home() {
   return (
@@ -47,7 +49,12 @@ export default function Home() {
       <ScrollFadeIn delay={0.1}>
         <Skill />
       </ScrollFadeIn>
-
+      <ScrollFadeIn delay={0.1}>
+        <Experience />
+      </ScrollFadeIn>
+      <ScrollFadeIn delay={0.1}>
+        <Work />
+      </ScrollFadeIn>
       {/* <div className="flex gap-3">
         <Link
           isExternal
