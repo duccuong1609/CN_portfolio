@@ -1,8 +1,14 @@
 import Image from "next/image";
 
-export const Illustration = ({ group, className }: { group: any, className?: string }) => {
+export const Illustration = ({
+  group,
+  className,
+}: {
+  group: any;
+  className?: string;
+}) => {
   return (
-    <div className={`${className || 'col-span-7 relative group'}`}>
+    <div className={`${className || "col-span-7 relative group"}`}>
       <Image
         fill
         alt="Work Illustration"
