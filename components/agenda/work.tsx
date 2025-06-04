@@ -1,90 +1,138 @@
 "use client";
 
 import { Card, CardBody } from "@heroui/card";
-import { Tab, Tabs } from "@heroui/tabs";
-import React, { useEffect } from "react";
-import { CgAtlasian } from "react-icons/cg";
+import React from "react";
 import Link from "next/link";
 
-import { experienceGroups } from "@/config/expriences";
+import { Illustration } from "../illustration";
+
+import { workGroups } from "@/config/work";
 
 export const Work = () => {
-  const [isVertical, setIsVertical] = React.useState(true);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsVertical(window.innerWidth > 1024);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
-    <div className="flex flex-col max-w-4xl items-center justify-center w-full py-8 px-4">
-      <h2 className="flex items-center text-2xl font-bold mb-8 w-full">
+    <div className="flex flex-col max-w-4xl xl:max-w-5xl items-center justify-center w-full py-8">
+      <h2 className="flex items-center text-2xl font-bold w-full">
         <span className="text-primary mr-3">04.</span>
         Some Things I’ve Built
-        <span className="ml-4 mr-1 lg:mx-4 lg:mr-3 h-px w-full flex-1 bg-slate-300" />
+        <span className="ml-4 h-px w-full flex-1 bg-slate-300" />
       </h2>
-      <Tabs
-        aria-label="Options"
-        className="transition-all duration-500"
-        classNames={{
-          cursor: "",
-          tabList: "flex overflow-x-auto flex-nowrap w-[90vw] lg:w-full",
-          tab: "bg-transparent",
-          tabContent: "",
-        }}
-        color="primary"
-        isVertical={isVertical}
-        radius="sm"
-        variant="underlined"
-      >
-        {experienceGroups.map((group) => (
-          <Tab
-            key={group.title}
-            className="!justify-start"
-            title={
-              <div className="flex items-start space-x-2 min-w-max">
-                {group.icon}
-                <span className="font-bold">{group.title}</span>
-              </div>
-            }
-          >
-            <Card className="transition-all duration-500">
-              <CardBody>
-                <h1 className="flex gap-1 text-lg font-semibold my-2">
-                  {group.jobTittle}
-                  <div className="text-primary">@</div>
-                  <Link
-                    className="relative inline-block text-primary transition-all duration-500 after:absolute after:left-0 after:bottom-0 after:h-[0.5px] after:w-0 after:bg-current after:transition-all after:duration-500 hover:after:w-full"
-                    href={group.href}
-                    target="_blank"
-                  >
-                    {group.hashtag}
-                  </Link>
-                </h1>
-                <p className="text-sm text-gray-400 mb-4">{group.time}</p>
-                <ul>
-                  {group.description.map((desc, index) => (
-                    <li key={index} className="mb-2 flex items-center gap-2">
-                      <div className="rotate-90 text-primary">
-                        <CgAtlasian />
-                      </div>
-                      <div>{desc}</div>
+      {workGroups.map((group, index) => (
+        <div key={index} className="my-12 hidden w-full lg:grid grid-cols-12 gap-3">
+          {index % 2 === 0 ? (
+            <>
+              {/* Left illustration */}
+              <Illustration group={group} />
+              {/* Right content */}
+              <div className="relative flex flex-col items-end justify-center col-span-5 -ml-36 z-10 py-10 gap-1">
+                <h1 className="text-primary">{group.features}</h1>
+                <h1 className="font-bold text-2xl">{group.title}</h1>
+                <Card
+                  className="my-4 shadow-[0_20px_30px_-20px_hsl(var(--heroui-default))]"
+                  radius="sm"
+                >
+                  <CardBody>
+                    <div className="m-4 text-right">{group.description}</div>
+                  </CardBody>
+                </Card>
+                <ul className="flex gap-4">
+                  {group.tags.map((tag, tagIndex) => (
+                    <li key={tagIndex} className="text-sm">
+                      {tag}
                     </li>
                   ))}
                 </ul>
-              </CardBody>
-            </Card>
-          </Tab>
-        ))}
-      </Tabs>
+                <div className="flex gap-4 mt-4">
+                  {group.href.map((link, linkIndex) => (
+                    <Link
+                      key={linkIndex}
+                      className="text-default-500 hover:text-primary transition-all duration-500 ease-in-out hover:-translate-y-1"
+                      href={link.href}
+                      target="_blank"
+                    >
+                      {link.icon}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              {/* Left content */}
+              <div className="relative flex flex-col items-start justify-center col-span-5 -mr-36 z-10 py-10 gap-1">
+                <h1 className="text-primary">{group.features}</h1>
+                <h1 className="font-bold text-2xl">{group.title}</h1>
+                <Card
+                  className="my-4 shadow-[0_20px_30px_-20px_hsl(var(--heroui-default))]"
+                  radius="sm"
+                >
+                  <CardBody>
+                    <div className="m-4 text-left">{group.description}</div>
+                  </CardBody>
+                </Card>
+                <ul className="flex gap-4">
+                  {group.tags.map((tag, tagIndex) => (
+                    <li key={tagIndex} className="text-sm">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex gap-4 mt-4">
+                  {group.href.map((link, linkIndex) => (
+                    <Link
+                      key={linkIndex}
+                      className="text-default-500 hover:text-primary transition-all duration-500 ease-in-out hover:-translate-y-1"
+                      href={link.href}
+                      target="_blank"
+                    >
+                      {link.icon}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              {/* Right Illustration */}
+              <Illustration group={group} />
+            </>
+          )}
+        </div>
+      ))}
+      {
+        workGroups.map((group, index) => (
+          <div key={index} className="my-8 lg:hidden w-full">
+
+            <div className="flex flex-col items-center justify-center gap-4">
+              <div className="items-center text-left">
+                <Card className="my-4 overflow-hidden relative shadow-xl border border-primary/10 group" radius="sm">
+                  <Illustration group={group} className="absolute inset-0 w-full h-full z-0 brightness-50" />
+                  <CardBody className="flex flex-col gap-4 p-6 md:p-12">
+                    <h1 className="text-primary">{group.features}</h1>
+                    <h1 className="font-bold text-2xl group-hover:text-primary transition-all duration-500 cursor-pointer">{group.title}</h1>
+                    <div className="my-4">{group.description}</div>
+                    <ul className="flex flex-wrap gap-4">
+                      {group.tags.map((tag, tagIndex) => (
+                        <li key={tagIndex} className="text-sm">
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex gap-4 mt-4">
+                      {group.href.map((link, linkIndex) => (
+                        <Link
+                          key={linkIndex}
+                          className="text-default-500 hover:text-primary transition-all duration-500 ease-in-out hover:-translate-y-1"
+                          href={link.href}
+                          target="_blank"
+                        >
+                          {link.icon}
+                        </Link>
+                      ))}
+                    </div>
+                  </CardBody>
+                </Card>
+              </div>
+            </div>
+          </div>
+        ))
+      }
     </div>
   );
 };
