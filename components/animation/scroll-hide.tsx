@@ -4,8 +4,10 @@ import { useScrollDirection } from "@/helper/scroll-direction";
 
 export default function ScrollAnimation({
   children,
+  className,
 }: {
   children?: React.ReactNode;
+  className?: string;
 }) {
   const scrollDirection = useScrollDirection();
 
@@ -14,6 +16,7 @@ export default function ScrollAnimation({
       animate={{
         opacity: scrollDirection === "down" ? 0 : 1,
       }}
+      className={className}
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
       {children}

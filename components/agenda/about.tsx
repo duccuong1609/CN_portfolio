@@ -2,7 +2,10 @@ import Image from "next/image";
 
 export const About = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center w-full py-8 gap-10 px-4 l">
+    <div
+      className="flex flex-col lg:flex-row items-center justify-center w-full py-8 gap-10 px-4 l"
+      id="about"
+    >
       <div className="flex flex-col items-start justify-start gap-3">
         <h2 className="flex items-center text-2xl font-bold mb-4 w-full">
           <span className="text-primary mr-3">01.</span>

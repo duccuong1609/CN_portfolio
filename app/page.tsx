@@ -6,6 +6,7 @@ import { Skill } from "@/components/agenda/skill";
 import { Experience } from "@/components/agenda/experience";
 import { Work } from "@/components/agenda/work";
 import { OtherWork } from "@/components/agenda/other-work";
+import { Contact } from "@/components/agenda/contact";
 
 export default function Home() {
   return (
@@ -58,6 +59,9 @@ export default function Home() {
       </ScrollFadeIn>
       <ScrollFadeIn delay={0.1}>
         <OtherWork />
+      </ScrollFadeIn>
+      <ScrollFadeIn delay={0.1}>
+        <Contact />
       </ScrollFadeIn>
       {/* <div className="flex gap-3">
         <Link

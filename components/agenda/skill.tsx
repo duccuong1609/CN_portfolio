@@ -37,7 +37,10 @@ const SkillItem = ({ skill }: { skill: any }) => (
 );
 
 export const Skill = () => (
-  <div className="flex flex-col items-center w-full py-8 px-4 bg-transparent">
+  <div
+    className="flex flex-col items-center w-full py-8 px-4 bg-transparent"
+    id="skill"
+  >
     <h2 className="flex items-center text-2xl font-bold mb-8 w-full">
       <span className="text-primary mr-3">02.</span>
       My Skills

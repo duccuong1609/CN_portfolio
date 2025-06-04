@@ -2,7 +2,6 @@
 
 import React from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { Link } from "@heroui/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Navbar } from "../navbar";
@@ -60,9 +59,10 @@ export function PreLoading({ children }: { children: React.ReactNode }) {
                   delay: motionTime.layout.motionNav.delay,
                 }}
               >
-                <ScrollAnimation>
+                <ScrollAnimation className="hidden lg:block">
                   <Navbar />
                 </ScrollAnimation>
+                <Navbar className="lg:hidden" />
               </motion.nav>
               <motion.main
                 animate={{ opacity: 1, y: 0 }}
@@ -85,17 +85,6 @@ export function PreLoading({ children }: { children: React.ReactNode }) {
                 }}
               >
                 <Sidebar />
-                <footer className="w-full flex items-center justify-center py-3">
-                  <Link
-                    isExternal
-                    className="flex items-center gap-1 text-current"
-                    href="https://heroui.com?utm_source=next-app-template"
-                    title="heroui.com homepage"
-                  >
-                    <span className="text-default-600">Powered by</span>
-                    <p className="text-primary">HeroUI</p>
-                  </Link>
-                </footer>
               </motion.footer>
             </motion.div>
           </AnimatePresence>

@@ -8,7 +8,7 @@ import ScrollFadeIn from "../animation/scroll-fade-in";
 import ResumeButton from "../button/resume-button";
 
 import { otherWorkGroups } from "@/config/other-works";
-import { ITEMS_PER_LOAD } from "@/config/item-settings";
+import { ITEMS_PER_LOAD } from "@/config/constant-setting";
 
 export const OtherWork = () => {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);

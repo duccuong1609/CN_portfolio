@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -15,6 +17,7 @@ import NextLink from "next/link";
 import clsx from "clsx";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 import ResumeButton from "./button/resume-button";
 
@@ -29,7 +32,7 @@ import {
 } from "@/components/icons";
 import { motionTime } from "@/config/motion.time";
 
-export const Navbar = () => {
+export const Navbar = ({ className }: { className?: string }) => {
   // const searchInput = (
   //   <Input
   //     aria-label="Search"
@@ -51,8 +54,14 @@ export const Navbar = () => {
   //   />
   // );
 
+  const [active, setActive] = useState(siteConfig.navItems[0].href);
+
   return (
-    <HeroUINavbar className="p-5 fixed" maxWidth="2xl" position="sticky">
+    <HeroUINavbar
+      className={`p-5 fixed ${className}`}
+      maxWidth="2xl"
+      position="sticky"
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <motion.div
@@ -96,17 +105,20 @@ export const Navbar = () => {
                     motionTime.item.delay * index,
                 }}
               >
-                <NextLink
+                <a
                   // className={clsx(
                   //   linkStyles({ color: "foreground" }),
                   //   "data-[active=true]:text-primary data-[active=true]:font-medium",
                   // )}
-                  className="px-1 hover:text-primary transition-all !duration-1000 ease-in-out"
+                  className={`px-1 transition-all !duration-1000 ease-in-out ${
+                    active === item.href ? "text-primary" : "text-foreground"
+                  }`}
                   href={item.href}
+                  onClick={() => setActive(item.href)}
                 >
                   <span className="text-primary mr-1">{index + 1}.</span>
                   {item.label}
-                </NextLink>
+                </a>
               </motion.div>
             </NavbarItem>
           ))}
@@ -123,7 +135,7 @@ export const Navbar = () => {
               }}
             >
               <ResumeButton className="rounded-sm">
-                <NextLink
+                <a
                   className={clsx(
                     linkStyles({ color: "foreground" }),
                     "data-[active=true]:text-primary data-[active=true]:font-medium",
@@ -132,7 +144,7 @@ export const Navbar = () => {
                   href={siteConfig.resume.href}
                 >
                   {siteConfig.resume.label}
-                </NextLink>
+                </a>
               </ResumeButton>
             </motion.div>
           </NavbarItem>
@@ -153,7 +165,10 @@ export const Navbar = () => {
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <ResumeButton className="w-full">
-                <Link
+                <a
+                  className={`${
+                    active === item.href ? "text-primary" : "text-foreground"
+                  }`}
                   color={
                     index === 2
                       ? "primary"
@@ -161,11 +176,12 @@ export const Navbar = () => {
                         ? "primary"
                         : "foreground"
                   }
-                  href="#"
-                  size="lg"
+                  href={item.href}
+                  onClick={() => setActive(item.href)}
+                  // size="lg"
                 >
                   {item.label}
-                </Link>
+                </a>
               </ResumeButton>
             </NavbarMenuItem>
           ))}

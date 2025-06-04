@@ -6,45 +6,45 @@ export const siteConfig = {
   navItems: [
     {
       label: "About",
-      href: "/",
+      href: "#about",
     },
     {
       label: "Skill",
-      href: "/skills",
+      href: "#skill",
     },
     {
       label: "Experience",
-      href: "/docs",
+      href: "#experience",
     },
     {
       label: "Work",
-      href: "/pricing",
+      href: "#work",
     },
     {
       label: "Contact",
-      href: "/blog",
+      href: "#contact",
     },
   ],
   navMenuItems: [
     {
       label: "About",
-      href: "/",
+      href: "#about",
     },
     {
       label: "Skill",
-      href: "/skills",
+      href: "#skill",
     },
     {
       label: "Experience",
-      href: "/docs",
+      href: "#experience",
     },
     {
       label: "Work",
-      href: "/pricing",
+      href: "#work",
     },
     {
       label: "Contact",
-      href: "/blog",
+      href: "#contact",
     },
     {
       label: "Resume",

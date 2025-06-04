@@ -11,7 +11,10 @@ import { workGroups } from "@/config/work";
 
 export const Work = () => {
   return (
-    <div className="flex flex-col max-w-4xl xl:max-w-5xl items-center justify-center w-full py-8">
+    <div
+      className="flex flex-col max-w-4xl xl:max-w-5xl items-center justify-center w-full py-8"
+      id="work"
+    >
       <h2 className="flex items-center text-2xl font-bold w-full">
         <span className="text-primary mr-3">04.</span>
         Some Things I’ve Built

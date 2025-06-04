@@ -5,7 +5,15 @@ export const experienceGroups = [
     title: "WATA TECH",
     hashtag: "WATA TECH",
     href: "https://watatech.com.vn/",
-    icon: <Image alt="wata" height={20} src="/logo/watatech.png" width={20} />,
+    icon: (
+      <Image
+        alt="wata"
+        height={20}
+        src="/logo/watatech.png"
+        style={{ width: "auto" }}
+        width={20}
+      />
+    ),
     jobTittle: "Software Developer",
     time: "June 2024 - June 2025",
     description: [
