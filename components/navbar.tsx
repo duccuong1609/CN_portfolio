@@ -110,9 +110,8 @@ export const Navbar = ({ className }: { className?: string }) => {
                   //   linkStyles({ color: "foreground" }),
                   //   "data-[active=true]:text-primary data-[active=true]:font-medium",
                   // )}
-                  className={`px-1 transition-all !duration-1000 ease-in-out ${
-                    active === item.href ? "text-primary" : "text-foreground"
-                  }`}
+                  className={`px-1 transition-all !duration-1000 ease-in-out ${active === item.href ? "text-primary" : "text-foreground"
+                    }`}
                   href={item.href}
                   onClick={() => setActive(item.href)}
                 >
@@ -134,18 +133,20 @@ export const Navbar = ({ className }: { className?: string }) => {
                 delay: motionTime.navbar.resumeButton.delay,
               }}
             >
-              <ResumeButton className="rounded-sm">
-                <a
-                  className={clsx(
-                    linkStyles({ color: "foreground" }),
-                    "data-[active=true]:text-primary data-[active=true]:font-medium",
-                  )}
-                  color="foreground"
-                  href={siteConfig.resume.href}
-                >
+              <a
+                className={clsx(
+                  linkStyles({ color: "foreground" }),
+                  "data-[active=true]:text-primary data-[active=true]:font-medium",
+                )}
+                color="foreground"
+                href={siteConfig.resume.href}
+              >
+                <ResumeButton className="rounded-sm">
+
                   {siteConfig.resume.label}
-                </a>
-              </ResumeButton>
+
+                </ResumeButton>
+              </a>
             </motion.div>
           </NavbarItem>
         )}
@@ -164,25 +165,25 @@ export const Navbar = ({ className }: { className?: string }) => {
         <div className="mx-4 mt-10 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <ResumeButton className="w-full">
-                <a
-                  className={`${
-                    active === item.href ? "text-primary" : "text-foreground"
+
+              <a
+                className={`${active === item.href ? "text-primary" : "text-foreground"
                   }`}
-                  color={
-                    index === 2
+                color={
+                  index === 2
+                    ? "primary"
+                    : index === siteConfig.navMenuItems.length - 1
                       ? "primary"
-                      : index === siteConfig.navMenuItems.length - 1
-                        ? "primary"
-                        : "foreground"
-                  }
-                  href={item.href}
-                  onClick={() => setActive(item.href)}
-                  // size="lg"
-                >
+                      : "foreground"
+                }
+                href={item.href}
+              // size="lg"
+              >
+                <ResumeButton className={`w-full ${active === item.href ? "text-primary" : "text-foreground"}`} onPress={() => setActive(item.href)}>
                   {item.label}
-                </a>
-              </ResumeButton>
+                </ResumeButton>
+              </a>
+
             </NavbarMenuItem>
           ))}
         </div>

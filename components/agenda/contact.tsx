@@ -48,9 +48,11 @@ export const Contact = () => {
             collaboration in mind, or just want to connect — I’m always open to
             meaningful conversations and will do my best to respond promptly.
           </div>
-          <ResumeButton className="p-6 px-8 rounded-sm">
-            Say Hello!
-          </ResumeButton>
+          <Link href="mailto:duccuong16092003@gmail.com" target="_blank" aria-label="Mail">
+            <ResumeButton className="p-6 px-8 rounded-sm">
+              Say Hello!
+            </ResumeButton>
+          </Link>
         </div>
       </div>
 
@@ -81,8 +83,8 @@ export const Contact = () => {
         <Link
           isExternal
           className="flex flex-wrap items-center gap-1 text-current"
-          href="https://heroui.com?utm_source=next-app-template"
-          title="heroui.com homepage"
+          href="https://github.com/duccuong1609"
+          title="my github"
         >
           <span className="text-default-600">Designed & built by</span>
           <p className="text-primary">Cuong Nguyen</p>
@@ -94,8 +96,8 @@ export const Contact = () => {
         <Link
           isExternal
           className="flex items-center gap-3 text-current"
-          href="https://heroui.com?utm_source=next-app-template"
-          title="heroui.com homepage"
+          href="https://github.com/duccuong1609/CN_portfolio.git"
+          title="github"
         >
           <div className="flex gap-1 items-center">
             <FaRegStar className="text-primary font-bold" size={15} />

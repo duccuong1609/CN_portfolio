@@ -14,7 +14,7 @@ export const Sidebar = () => {
         <Link isExternal aria-label="Github" href={siteConfig.links.github}>
           <GithubIcon className="text-default-500 hover:text-primary transition-all duration-500 ease-in-out hover:-translate-y-1" />
         </Link>
-        <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
+        <Link isExternal aria-label="Twitter" href={siteConfig.links.linkedin}>
           <AiFillLinkedin
             className="text-default-500 hover:text-primary transition-all duration-500 ease-in-out hover:-translate-y-1"
             size={25}
@@ -26,7 +26,7 @@ export const Sidebar = () => {
         <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
           <DiscordIcon className="text-default-500 hover:text-primary transition-all duration-500 ease-in-out hover:-translate-y-1" />
         </Link>
-        <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
+        <Link isExternal aria-label="Twitter" href={siteConfig.links.kaggle}>
           <FaKaggle
             className="text-default-500 hover:text-primary transition-all duration-500 ease-in-out hover:-translate-y-1"
             size={25}
@@ -38,7 +38,7 @@ export const Sidebar = () => {
       <div className="z-50 pointer-events-auto flex flex-col items-center justify-between">
         <Link
           className="text-default-500 hover:text-primary transition-all duration-500 ease-in-out hover:-translate-y-1"
-          href="#"
+          href="mailto:duccuong16092003@gmail.com"
           style={{ writingMode: "vertical-lr" }}
         >
           duccuong16092003@gmail.com

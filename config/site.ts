@@ -48,18 +48,18 @@ export const siteConfig = {
     },
     {
       label: "Resume",
-      href: "/resume",
+      href: "/cv/CV.pdf",
     },
   ],
   links: {
-    github: "https://github.com/heroui-inc/heroui",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    github: "https://github.com/duccuong1609",
+    linkedin: "https://www.linkedin.com/in/cuong-nguyen-682509348/",
+    twitter: "https://x.com/",
+    discord: "https://discord.gg/DWWpra2u",
+    kaggle: "https://www.kaggle.com/cuongnguyen16",
   },
   resume: {
-    href: "https://github.com/heroui-inc/heroui",
+    href: "/cv/CV.pdf",
     label: "Resume",
   },
 };
