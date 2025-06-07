@@ -7,7 +7,7 @@ export const workGroups = [
     image: "/odoo.PNG",
     title: "Warehouse Management System",
     description:
-      "A addons system based on Odoo 18, developed to manage consignment and multi-warehouse transportation between Ho Chi Minh City and Cambodia. The system includes features for barcode scanning to retrieve demand based on consignment orders and custom reporting according to user needs.",
+      "A addons system based on Odoo 18, developed to manage consignment and multi-warehouse transportation between Viet Nam and Cambodia. The system includes features for barcode scanning to retrieve demand based on consignment orders and custom reporting according to user needs.",
     href: [
       {
         label: "github",
