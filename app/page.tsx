@@ -1,12 +1,12 @@
 import { title, subtitle } from "@/components/primitives";
 import ResumeButton from "@/components/button/resume-button";
-import { About } from "@/components/agenda/about";
 import ScrollFadeIn from "@/components/animation/scroll-fade-in";
-import { Skill } from "@/components/agenda/skill";
-import { Experience } from "@/components/agenda/experience";
-import { Work } from "@/components/agenda/work";
-import { OtherWork } from "@/components/agenda/other-work";
-import { Contact } from "@/components/agenda/contact";
+import { About } from "@/features/porfolio/components/about";
+import { Skill } from "@/features/porfolio/components/skill";
+import { Experience } from "@/features/porfolio/components/experience";
+import { Work } from "@/features/porfolio/components/work";
+import { OtherWork } from "@/features/porfolio/components/other-work";
+import { Contact } from "@/features/porfolio/components/contact";
 
 export default function Home() {
   return (
@@ -63,35 +63,6 @@ export default function Home() {
       <ScrollFadeIn delay={0.1}>
         <Contact />
       </ScrollFadeIn>
-      {/* <div className="flex gap-3">
-        <Link
-          isExternal
-          className={buttonStyles({
-            color: "primary",
-            radius: "full",
-            variant: "shadow",
-          })}
-          href={siteConfig.links.docs}
-        >
-          Documentation
-        </Link>
-        <Link
-          isExternal
-          className={buttonStyles({ variant: "bordered", radius: "full" })}
-          href={siteConfig.links.github}
-        >
-          <GithubIcon size={20} />
-          GitHub
-        </Link>
-      </div> */}
-
-      {/* <div className="mt-8">
-        <Snippet hideCopyButton hideSymbol variant="bordered">
-          <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
-          </span>
-        </Snippet>
-      </div> */}
     </section>
   );
 }

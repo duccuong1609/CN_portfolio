@@ -8,18 +8,17 @@ import { CgGitFork } from "react-icons/cg";
 import { GrOverview } from "react-icons/gr";
 import { AiFillLinkedin } from "react-icons/ai";
 
-import { DiscordIcon, GithubIcon, TwitterIcon } from "../icons";
-import ResumeButton from "../button/resume-button";
-
 import { REPOSITORY_LINK } from "@/config/constant-setting";
 import { siteConfig } from "@/config/site";
+import ResumeButton from "@/components/button/resume-button";
+import { DiscordIcon, GithubIcon, TwitterIcon } from "@/components/icons";
 
 export const Contact = () => {
   const [githubStats, setGithubStats] = useState<any>(null);
 
   const fetchGitHubStats = async () => {
     try {
-      const res = await axios.get(`${REPOSITORY_LINK}`);
+      const res = await axios.get("/api/github-stats");
       const data = res.data;
 
       setGithubStats(data);

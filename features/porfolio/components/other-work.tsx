@@ -4,11 +4,10 @@ import { Card, CardBody } from "@heroui/card";
 import React, { useState } from "react";
 import { CiFolderOn } from "react-icons/ci";
 
-import ScrollFadeIn from "../animation/scroll-fade-in";
-import ResumeButton from "../button/resume-button";
-
 import { otherWorkGroups } from "@/config/other-works";
 import { ITEMS_PER_LOAD } from "@/config/constant-setting";
+import ScrollFadeIn from "@/components/animation/scroll-fade-in";
+import ResumeButton from "@/components/button/resume-button";
 
 export const OtherWork = () => {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);

@@ -4,10 +4,10 @@ import { Card, CardBody } from "@heroui/card";
 import React from "react";
 import Link from "next/link";
 
-import { Illustration } from "../illustration";
-import ScrollFadeIn from "../animation/scroll-fade-in";
 
 import { workGroups } from "@/config/work";
+import { Illustration } from "@/components/illustration";
+import ScrollFadeIn from "@/components/animation/scroll-fade-in";
 
 export const Work = () => {
   return (
