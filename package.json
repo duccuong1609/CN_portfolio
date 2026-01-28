@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix"
+    "lint": "eslint --fix",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@heroui/button": "2.2.19",
