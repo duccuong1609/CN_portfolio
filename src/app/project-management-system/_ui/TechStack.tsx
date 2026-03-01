@@ -2,27 +2,29 @@
 
 import { motion } from "framer-motion";
 import {
-  SiNextdotjs,
+  SiReact,
   SiTypescript,
   SiTailwindcss,
-  SiPrisma,
-  SiVercel,
+  SiRedux,
+  SiNodedotjs,
   SiPostgresql,
+  SiExpress,
 } from "react-icons/si";
 
-import { memMoviesContent } from "@/constants/mem-movies";
+import { projectManagementContent } from "@/constants/project-management";
 
 const IconMap: { [key: string]: any } = {
-  NextJS: SiNextdotjs,
+  "React 18": SiReact,
   TypeScript: SiTypescript,
-  TailwindCSS: SiTailwindcss,
-  Prisma: SiPrisma,
-  Vercel: SiVercel,
+  "Tailwind CSS": SiTailwindcss,
+  "Redux Toolkit": SiRedux,
+  "Node.js": SiNodedotjs,
   PostgreSQL: SiPostgresql,
+  Express: SiExpress,
 };
 
 export default function TechStack() {
-  const { techStack } = memMoviesContent;
+  const { techStack } = projectManagementContent;
 
   return (
     <section className="py-24 text-center">
@@ -37,7 +39,7 @@ export default function TechStack() {
 
       <div className="flex flex-wrap justify-center gap-6">
         {techStack.items.map((tech, index) => {
-          const Icon = IconMap[tech.icon] || SiNextdotjs;
+          const Icon = IconMap[tech.name] || SiReact;
 
           return (
             <motion.div

@@ -5,11 +5,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Maximize2 } from "lucide-react";
 
-import { memMoviesContent } from "@/constants/mem-movies";
+import { projectManagementContent } from "@/constants/project-management";
 import Gallery from "@/components/Gallery";
 
 export default function VisualShowcase() {
-  const { showcase } = memMoviesContent;
+  const { showcase } = projectManagementContent;
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 

@@ -1,4 +1,3 @@
-
 # Next.js & shadcn/ui Portfolio
 
 This is a modern portfolio application using Next.js 15 (app directory) and Tailwind CSS v4.

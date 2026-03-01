@@ -22,8 +22,8 @@ export const Work = () => {
         <ScrollFadeIn key={index} delay={0.1}>
           {/* Desktop layout */}
           <Link
-            href={group.link || "#"}
             className="my-12 hidden w-full lg:grid grid-cols-12 gap-3 group cursor-pointer"
+            href={group.link || "#"}
           >
             {index % 2 === 0 ? (
               <>
@@ -40,7 +40,9 @@ export const Work = () => {
                 {/* Right: content */}
                 <div className="relative flex flex-col items-end justify-center col-span-5 -ml-24 z-10 py-10 gap-2">
                   <p className="text-primary text-sm">{group.features}</p>
-                  <h3 className="font-bold text-2xl group-hover:text-primary transition-colors duration-300">{group.title}</h3>
+                  <h3 className="font-bold text-2xl group-hover:text-primary transition-colors duration-300">
+                    {group.title}
+                  </h3>
                   <div className="my-2 rounded-md border border-border bg-card/95 backdrop-blur-sm shadow-xl p-4 text-right text-sm text-muted-foreground">
                     {group.description}
                   </div>
@@ -53,13 +55,30 @@ export const Work = () => {
                     {group.href.map((link, linkIndex) => (
                       <div
                         key={linkIndex}
+                        aria-label={link.label}
+                        className="text-muted-foreground hover:text-primary transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                        role="button"
+                        tabIndex={0}
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
-                          window.open(link.href, "_blank", "noopener,noreferrer");
+                          window.open(
+                            link.href,
+                            "_blank",
+                            "noopener,noreferrer",
+                          );
                         }}
-                        aria-label={link.label}
-                        className="text-muted-foreground hover:text-primary transition-all duration-300 hover:-translate-y-1"
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            window.open(
+                              link.href,
+                              "_blank",
+                              "noopener,noreferrer",
+                            );
+                          }
+                        }}
                       >
                         {link.icon}
                       </div>
@@ -72,7 +91,9 @@ export const Work = () => {
                 {/* Left: content */}
                 <div className="relative flex flex-col items-start justify-center col-span-5 -mr-24 z-10 py-10 gap-2">
                   <p className="text-primary text-sm">{group.features}</p>
-                  <h3 className="font-bold text-2xl group-hover:text-primary transition-colors duration-300">{group.title}</h3>
+                  <h3 className="font-bold text-2xl group-hover:text-primary transition-colors duration-300">
+                    {group.title}
+                  </h3>
                   <div className="my-2 rounded-md border border-border bg-card/95 backdrop-blur-sm shadow-xl p-4 text-left text-sm text-muted-foreground">
                     {group.description}
                   </div>
@@ -85,13 +106,30 @@ export const Work = () => {
                     {group.href.map((link, linkIndex) => (
                       <div
                         key={linkIndex}
+                        aria-label={link.label}
+                        className="text-muted-foreground hover:text-primary transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                        role="button"
+                        tabIndex={0}
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
-                          window.open(link.href, "_blank", "noopener,noreferrer");
+                          window.open(
+                            link.href,
+                            "_blank",
+                            "noopener,noreferrer",
+                          );
                         }}
-                        aria-label={link.label}
-                        className="text-muted-foreground hover:text-primary transition-all duration-300 hover:-translate-y-1"
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            window.open(
+                              link.href,
+                              "_blank",
+                              "noopener,noreferrer",
+                            );
+                          }
+                        }}
                       >
                         {link.icon}
                       </div>
@@ -114,8 +152,8 @@ export const Work = () => {
 
           {/* Mobile layout */}
           <Link
-            href={group.link || "#"}
             className="my-6 lg:hidden block w-full px-4"
+            href={group.link || "#"}
           >
             <div className="rounded-lg border border-border bg-card overflow-hidden shadow-xl group">
               <div className="relative overflow-hidden">
@@ -144,13 +182,26 @@ export const Work = () => {
                   {group.href.map((link, linkIndex) => (
                     <div
                       key={linkIndex}
+                      aria-label={link.label}
+                      className="text-muted-foreground hover:text-primary transition-all duration-300 cursor-pointer"
+                      role="button"
+                      tabIndex={0}
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
                         window.open(link.href, "_blank", "noopener,noreferrer");
                       }}
-                      aria-label={link.label}
-                      className="text-muted-foreground hover:text-primary transition-all duration-300"
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          window.open(
+                            link.href,
+                            "_blank",
+                            "noopener,noreferrer",
+                          );
+                        }
+                      }}
                     >
                       {link.icon}
                     </div>

@@ -23,6 +23,10 @@ export const siteConfig = {
       href: "/#work",
     },
     {
+      label: "Award",
+      href: "/#award",
+    },
+    {
       label: "Contact",
       href: "/#contact",
     },
@@ -43,6 +47,10 @@ export const siteConfig = {
     {
       label: "Work",
       href: "/#work",
+    },
+    {
+      label: "Award",
+      href: "/#award",
     },
     {
       label: "Contact",

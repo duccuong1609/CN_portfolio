@@ -27,10 +27,11 @@ export const Experience = () => {
           {experienceGroups.map((group) => (
             <button
               key={group.title}
-              className={`flex items-center gap-2 px-5 py-3 text-sm whitespace-nowrap transition-all duration-200 border-b-2 lg:border-b-0 lg:border-l-2 -mb-px lg:mb-0 lg:-ml-px text-left ${activeTab === group.title
-                ? "border-primary text-primary bg-primary/5"
-                : "border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/30"
-                }`}
+              className={`flex items-center gap-2 px-5 py-3 text-sm whitespace-nowrap transition-all duration-200 border-b-2 lg:border-b-0 lg:border-l-2 -mb-px lg:mb-0 lg:-ml-px text-left ${
+                activeTab === group.title
+                  ? "border-primary text-primary bg-primary/5"
+                  : "border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/30"
+              }`}
               onClick={() => setActiveTab(group.title)}
             >
               {group.icon}

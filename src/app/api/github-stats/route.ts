@@ -8,7 +8,7 @@ export async function GET() {
     const response = await axios.get(REPOSITORY_LINK);
 
     return NextResponse.json(response.data);
-  } catch (_error) {
+  } catch {
     return NextResponse.json(
       { error: "Failed to fetch data" },
       { status: 500 },

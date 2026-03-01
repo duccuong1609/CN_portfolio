@@ -36,7 +36,7 @@ export const otherWorkGroups = [
         label: "github",
         icon: <Github size={20} />,
         href: "https://github.com/nguyencuong1609/NirvanaGame.git",
-      }
+      },
     ],
     tags: ["Spring Boot", "Zalo SDK", "ReactJS"],
   },
@@ -49,7 +49,7 @@ export const otherWorkGroups = [
         label: "github",
         icon: <Github size={20} />,
         href: "",
-      }
+      },
     ],
     tags: ["Java Swing", "Java Core"],
   },
@@ -101,7 +101,7 @@ export const otherWorkGroups = [
         label: "github",
         icon: <Github size={20} />,
         href: "",
-      }
+      },
     ],
     tags: ["HTML", "CSS", "JavaScript"],
   },

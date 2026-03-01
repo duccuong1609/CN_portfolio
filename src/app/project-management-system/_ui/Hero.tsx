@@ -5,10 +5,10 @@ import { Github, Play } from "lucide-react";
 import Image from "next/image";
 
 import ResumeButton from "@/components/button/ResumeButton";
-import { memMoviesContent } from "@/constants/mem-movies";
+import { projectManagementContent } from "@/constants/project-management";
 
 export default function Hero() {
-  const { hero } = memMoviesContent;
+  const { hero } = projectManagementContent;
 
   return (
     <section className="relative w-full flex flex-col lg:flex-row items-center gap-12 py-20 px-4 md:px-0">
@@ -26,7 +26,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           transition={{ delay: 0.1 }}
         >
-          MEM <span className="text-primary">Movies</span>
+          Project <span className="text-primary">Management</span>
         </motion.h1>
         <motion.p
           animate={{ opacity: 1, y: 0 }}
@@ -37,17 +37,15 @@ export default function Hero() {
           {hero.description}
         </motion.p>
         <div className="flex flex-wrap gap-4 relative z-10">
-          <a
-            className="inline-block"
-            href={hero.liveDemo}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <ResumeButton className="flex cursor-pointer items-center gap-2 px-6 py-3">
+          <div className="inline-block">
+            <ResumeButton
+              aria-disabled="true"
+              className="flex cursor-not-allowed items-center gap-2 px-6 py-3 opacity-50 pointer-events-none"
+            >
               <Play fill="currentColor" size={18} />
-              Live Demo
+              Live Demo (Coming Soon)
             </ResumeButton>
-          </a>
+          </div>
 
           <a
             className="inline-block"
@@ -63,32 +61,23 @@ export default function Hero() {
         </div>
       </div>
 
-      <motion.a
+      <motion.div
         animate={{ opacity: 1, x: 0 }}
-        className="flex-1 relative w-full aspect-video md:aspect-16/10 max-w-2xl rounded-xl overflow-hidden shadow-2xl shadow-primary/20 group cursor-pointer block z-0"
-        href={hero.liveDemo}
+        className="flex-1 relative w-full aspect-video md:aspect-16/10 max-w-2xl rounded-xl overflow-hidden shadow-2xl shadow-primary/20 group block z-0"
         initial={{ opacity: 0, x: 50 }}
-        rel="noopener noreferrer"
-        target="_blank"
         transition={{ delay: 0.4, duration: 0.6 }}
       >
         <Image
           fill
           priority
           alt={hero.title}
-          className="object-fill transition-all duration-700 group-hover:scale-105 group-hover:brightness-50"
-          fetchPriority="high"
+          className="object-fill transition-all duration-700 group-hover:scale-105"
           src={hero.image}
         />
 
         {/* Overlay layer */}
         <div className="absolute inset-0 bg-linear-to-t from-background/40 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-          <div className="p-5 rounded-full bg-primary/90 text-background backdrop-blur-sm shadow-xl transform scale-90 group-hover:scale-100 transition-transform">
-            <Play fill="currentColor" size={32} />
-          </div>
-        </div>
-      </motion.a>
+      </motion.div>
     </section>
   );
 }

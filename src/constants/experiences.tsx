@@ -43,7 +43,7 @@ export const experienceGroups = [
       "Optimized large dataset rendering and UI interactions, reducing manual stock errors and operational delays by 35%",
       "Built production tracking interface with real-time alerts for MES system, improving supervisor decision-making speed",
       "Automated reporting workflows and backend APIs using Spring Boot and PostgreSQL to ensure instant production visibility",
-    ]
+    ],
   },
   {
     title: "IUH",

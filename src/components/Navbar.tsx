@@ -59,7 +59,9 @@ export const Navbar = ({ className }: { className?: string }) => {
               src="/logo/logo.png"
               width={40}
             />
-            <span className="font-bold text-foreground uppercase tracking-tight">Nguyen Duc Cuong</span>
+            <span className="font-bold text-foreground uppercase tracking-tight">
+              Cuong Nguyen
+            </span>
           </NextLink>
         </motion.div>
 
@@ -78,10 +80,11 @@ export const Navbar = ({ className }: { className?: string }) => {
                   }}
                 >
                   <NextLink
-                    className={`px-3 py-1 text-sm transition-all duration-300 font-medium ${activeHref === item.href
-                      ? "text-primary bg-primary/5 rounded-md"
-                      : "text-muted-foreground hover:text-foreground"
-                      }`}
+                    className={`px-3 py-1 text-sm transition-all duration-300 font-medium ${
+                      activeHref === item.href
+                        ? "text-primary bg-primary/5 rounded-md"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
                     href={item.href}
                     onClick={() => setActiveHref(item.href)}
                   >
@@ -125,7 +128,9 @@ export const Navbar = ({ className }: { className?: string }) => {
         >
           <NextLink className="flex items-center gap-2" href="/">
             <Image alt="Logo" height={36} src="/logo/logo.png" width={36} />
-            <span className="font-bold text-sm tracking-tight">CUONG NGUYEN</span>
+            <span className="font-bold text-sm tracking-tight">
+              CUONG NGUYEN
+            </span>
           </NextLink>
 
           <div className="flex items-center gap-2">
@@ -162,15 +167,16 @@ export const Navbar = ({ className }: { className?: string }) => {
               {siteConfig.navMenuItems.map((item, index) => (
                 <motion.div
                   key={item.href}
-                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 10 }}
                   transition={{ delay: index * 0.05 }}
                 >
                   <NextLink
-                    className={`text-xl font-bold transition-colors duration-300 ${activeHref === item.href
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground"
-                      }`}
+                    className={`text-xl font-bold transition-colors duration-300 ${
+                      activeHref === item.href
+                        ? "text-primary"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
                     href={item.href}
                     onClick={() => {
                       setActiveHref(item.href);

@@ -7,7 +7,7 @@ import {
   FaJs,
   FaNodeJs,
   FaReact,
-  FaShopify
+  FaShopify,
 } from "react-icons/fa";
 import {
   SiBootstrap,
@@ -23,7 +23,7 @@ import {
   SiSpringboot,
   SiTailwindcss,
   SiTypescript,
-  SiVercel
+  SiVercel,
 } from "react-icons/si";
 
 export const skillGroups = [
@@ -82,7 +82,7 @@ export const skillGroups = [
             icon: <ChartAreaIcon style={{ color: "#22d3ee" }} />,
             progress: 80,
           },
-        ]
+        ],
       },
       {
         label: "TanStack React",
@@ -99,7 +99,7 @@ export const skillGroups = [
             icon: <FaReact style={{ color: "#22d3ee" }} />,
             progress: 80,
           },
-        ]
+        ],
       },
       {
         label: "State Management",
@@ -116,8 +116,8 @@ export const skillGroups = [
             icon: <FaReact style={{ color: "#22d3ee" }} />,
             progress: 80,
           },
-        ]
-      }
+        ],
+      },
     ],
   },
   {

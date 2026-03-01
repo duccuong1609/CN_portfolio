@@ -1,4 +1,5 @@
 import { ExternalLink, Trophy } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import ScrollFadeIn from "@/components/animation/ScrollFadeIn";
@@ -37,13 +38,33 @@ export const Award = () => {
                 )}
               </div>
 
-              <div className="flex-1">
+              <div className="flex-1 flex flex-col">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
                   {award.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   {award.description}
                 </p>
+
+                {/* Award Images */}
+                {award.images && award.images.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-4 flex-1">
+                    {award.images.map((img, imgIdx) => (
+                      <div
+                        key={imgIdx}
+                        className="relative overflow-hidden h-full rounded-md border border-border/50 shadow-xs group/img flex-1"
+                      >
+                        <Image
+                          alt={`${award.title} - ${imgIdx + 1}`}
+                          className="object-cover h-full w-full transition-transform duration-500 group-hover/img:scale-110"
+                          height={100}
+                          src={img}
+                          width={150}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="mt-auto">

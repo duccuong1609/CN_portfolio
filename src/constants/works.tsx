@@ -42,5 +42,5 @@ export const workGroups = [
       },
     ],
     tags: ["React", "TypeScript", "TailwindCSS", "shadcn/ui", "NodeJS"],
-  }
+  },
 ];

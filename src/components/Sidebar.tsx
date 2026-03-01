@@ -2,11 +2,12 @@
 
 import { Github, Linkedin, Twitter, MessageSquare } from "lucide-react";
 import { FaKaggle } from "react-icons/fa";
+import React from "react";
+
+import ScrollAnimation from "./animation/ScrollHide";
 
 import { ThemeSwitch } from "@/components/ThemeSwitch";
 import { siteConfig } from "@/constants/site";
-import ScrollAnimation from "./animation/ScrollHide";
-import React from "react";
 
 export const Sidebar = () => {
   const socialLinks = [
@@ -40,7 +41,10 @@ export const Sidebar = () => {
   return (
     <React.Fragment>
       {/* Left: social icons */}
-      <ScrollAnimation className="hidden md:block fixed w-fit bottom-0 left-4" direction="down">
+      <ScrollAnimation
+        className="hidden md:block fixed w-fit bottom-0 left-4"
+        direction="down"
+      >
         <div className="z-50 w-fit flex pointer-events-auto flex-col items-center space-y-4">
           {socialLinks.map((link) => (
             <a
@@ -60,7 +64,10 @@ export const Sidebar = () => {
       </ScrollAnimation>
 
       {/* Right: email */}
-      <ScrollAnimation className="hidden md:block fixed w-fit bottom-0 right-4" direction="down">
+      <ScrollAnimation
+        className="hidden md:block fixed w-fit bottom-0 right-4"
+        direction="down"
+      >
         <div className="z-50 w-fit pointer-events-auto flex flex-col items-center">
           <a
             className="text-muted-foreground hover:text-primary transition-all duration-300 hover:-translate-y-1 text-xs font-mono tracking-widest"

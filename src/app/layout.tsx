@@ -86,7 +86,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${firaCode.variable} antialiased relative min-h-screen bg-background text-foreground overflow-x-hidden`}
       >
-        <ScrollAnimation className="fixed top-0 left-0 right-0 z-50" direction="up">
+        <ScrollAnimation
+          className="fixed top-0 left-0 right-0 z-50"
+          direction="up"
+        >
           <Navbar />
         </ScrollAnimation>
 

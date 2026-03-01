@@ -71,10 +71,11 @@ export const Skill = () => {
             {skillGroups.map((group) => (
               <button
                 key={group.title}
-                className={`flex items-center gap-2 px-4 py-2 text-sm whitespace-nowrap transition-all duration-200 border-b-2 -mb-px ${activeTab === group.title
-                  ? "border-primary text-primary"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
-                  }`}
+                className={`flex items-center gap-2 px-4 py-2 text-sm whitespace-nowrap transition-all duration-200 border-b-2 -mb-px ${
+                  activeTab === group.title
+                    ? "border-primary text-primary"
+                    : "border-transparent text-muted-foreground hover:text-foreground"
+                }`}
                 onClick={() => setActiveTab(group.title)}
               >
                 {group.icon}

@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion";
 
-import { memMoviesContent } from "@/constants/mem-movies";
+import { projectManagementContent } from "@/constants/project-management";
 
 export default function Overview() {
-  const { overview, features } = memMoviesContent;
+  const { overview, features } = projectManagementContent;
 
   return (
     <section className="py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
