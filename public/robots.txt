@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cuong-nguyen.dev
+
+# Sitemaps
+Sitemap: https://cuong-nguyen.dev/sitemap.xml
