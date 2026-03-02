@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-fira-code);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Portfolio palette */
+  --palette-cyan: oklch(0.86 0.18 195);
+  --palette-cyan-dark: oklch(0.7 0.18 195);
+  --palette-dark: oklch(0.1 0.01 240);
+
+  /* Light theme */
+  --background: oklch(0.96 0.01 240);
+  --foreground: oklch(0.08 0.01 240);
+  --primary: oklch(0.7 0.18 195);
+  --primary-foreground: oklch(0.1 0.01 240);
+  --secondary: oklch(0.94 0.01 240);
+  --secondary-foreground: oklch(0.2 0.01 240);
+  --muted: oklch(0.94 0.01 240);
+  --muted-foreground: oklch(0.42 0.01 240);
+  --accent: oklch(0.94 0.01 240);
+  --accent-foreground: oklch(0.2 0.01 240);
+  --card: oklch(0.99 0 0);
+  --card-foreground: oklch(0.13 0.01 240);
+  --border: oklch(0.88 0.01 240);
+  --ring: oklch(0.7 0.18 195);
+  --destructive: oklch(0.55 0.22 27);
+
+  --background-rgb: 249 250 251;
+  --foreground-rgb: 17 24 39;
+}
+
+.dark {
+  --background: oklch(0.1 0.01 240);
+  --foreground: oklch(0.97 0 0);
+  --primary: oklch(0.86 0.18 195);
+  --primary-foreground: oklch(0.1 0.01 240);
+  --secondary: oklch(0.18 0.01 240);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.18 0.01 240);
+  --muted-foreground: oklch(0.72 0.01 240);
+  --accent: oklch(0.18 0.01 240);
+  --accent-foreground: oklch(0.97 0 0);
+  --card: oklch(0.14 0.01 240);
+  --card-foreground: oklch(0.97 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --ring: oklch(0.86 0.18 195);
+  --destructive: oklch(0.65 0.22 27);
+
+  --background-rgb: 13 17 23;
+  --foreground-rgb: 248 250 252;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+html::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+.section-container {
+  @apply mx-auto w-full max-w-4xl px-6 py-24;
+}
