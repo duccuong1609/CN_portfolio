@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Nguyen Duc Cuong | Fullstack Developer",
   description:
     "Portfolio of Nguyen Duc Cuong — a fullstack developer specializing in React, Next.js, Node.js, and AI-powered web applications.",
-  url: "https://cuong-nguyen.dev",
+  url: "https://cnportfolio.vercel.app",
   navItems: [
     {
       label: "About",

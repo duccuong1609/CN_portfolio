@@ -69,6 +69,7 @@ export const metadata: Metadata = {
     icon: "/logo/logo.png",
     shortcut: "/logo/logo.png",
   },
+  metadataBase: new URL(siteConfig.url),
 };
 
 export const viewport: Viewport = {
@@ -108,19 +109,6 @@ export default function RootLayout({
           />
         </div>
 
-        <div className="hidden dark:block fixed inset-0 -z-10 pointer-events-none">
-          <Beams
-            beamHeight={30}
-            beamNumber={20}
-            beamWidth={3}
-            lightColor="#ffffff"
-            noiseIntensity={1.75}
-            rotation={30}
-            scale={0.2}
-            speed={2}
-          />
-        </div>
-
         <div className="block dark:hidden fixed inset-0 -z-10 pointer-events-none">
           <ColorBends
             colors={["#f43f5e", "#8b5cf6", "#0ea5e9"]}
@@ -137,7 +125,7 @@ export default function RootLayout({
           />
         </div>
 
-        {children}
+        <main className="relative z-10">{children}</main>
         <Sidebar />
       </body>
     </html>
