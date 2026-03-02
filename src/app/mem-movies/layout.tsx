@@ -17,7 +17,7 @@ export default function ProjectLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
+    <div className="min-h-screen">
       {children}
     </div>
   );

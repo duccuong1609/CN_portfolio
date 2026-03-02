@@ -14,7 +14,7 @@ export const projectManagementContent = {
     title: "Project Management System",
     description:
       "A comprehensive open-source workspace for managing projects, tasks, and teams with real-time analytics and multi-workspace support.",
-    liveDemo: "#", // pointer-event-none
+    liveDemo: "https://cn-pm-app.vercel.app",
     viewCode: "https://github.com/duccuong1609/pm_fe",
     image: "/pm.jpg",
   },

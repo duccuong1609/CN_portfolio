@@ -37,15 +37,17 @@ export default function Hero() {
           {hero.description}
         </motion.p>
         <div className="flex flex-wrap gap-4 relative z-10">
-          <div className="inline-block">
-            <ResumeButton
-              aria-disabled="true"
-              className="flex cursor-not-allowed items-center gap-2 px-6 py-3 opacity-50 pointer-events-none"
-            >
+          <a
+            className="inline-block"
+            href={hero.liveDemo}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <ResumeButton className="flex items-center gap-2 px-6 py-3 hover:shadow-[3px_3px_0_0_var(--color-primary)]/20">
               <Play fill="currentColor" size={18} />
-              Live Demo (Coming Soon)
+              Live Demo
             </ResumeButton>
-          </div>
+          </a>
 
           <a
             className="inline-block"

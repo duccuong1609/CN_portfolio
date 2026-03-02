@@ -7,6 +7,8 @@ import { Navbar } from "@/components/Navbar";
 import { siteConfig } from "@/constants/site";
 import { Sidebar } from "@/components/Sidebar";
 import ScrollAnimation from "@/components/animation/ScrollHide";
+import Beams from "@/components/Beams";
+import ColorBends from "@/components/ColorBends";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -93,8 +95,49 @@ export default function RootLayout({
           <Navbar />
         </ScrollAnimation>
 
-        <main>{children}</main>
+        <div className="hidden dark:block fixed inset-0 -z-10 pointer-events-none">
+          <Beams
+            beamHeight={30}
+            beamNumber={20}
+            beamWidth={3}
+            lightColor="#ffffff"
+            noiseIntensity={1.75}
+            rotation={30}
+            scale={0.2}
+            speed={2}
+          />
+        </div>
 
+        <div className="hidden dark:block fixed inset-0 -z-10 pointer-events-none">
+          <Beams
+            beamHeight={30}
+            beamNumber={20}
+            beamWidth={3}
+            lightColor="#ffffff"
+            noiseIntensity={1.75}
+            rotation={30}
+            scale={0.2}
+            speed={2}
+          />
+        </div>
+
+        <div className="block dark:hidden fixed inset-0 -z-10 pointer-events-none">
+          <ColorBends
+            colors={["#f43f5e", "#8b5cf6", "#0ea5e9"]}
+            rotation={0}
+            speed={0.2}
+            scale={1}
+            frequency={1}
+            warpStrength={1}
+            mouseInfluence={1}
+            parallax={0.5}
+            noise={0.1}
+            transparent
+            autoRotate={0}
+          />
+        </div>
+
+        {children}
         <Sidebar />
       </body>
     </html>
