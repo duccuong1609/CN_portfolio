@@ -28,7 +28,7 @@ export const ThemeSwitch = ({ className }: { className?: string }) => {
   return (
     <button
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
-      className={`p-1 text-muted-foreground hover:text-primary transition-all duration-300 hover:-translate-y-1 ${className ?? ""}`}
+      className={`p-1 cursor-pointer text-muted-foreground hover:text-primary transition-all duration-300 hover:-translate-y-1 ${className ?? ""}`}
       onClick={toggle}
     >
       {isDark ? <Sun size={20} /> : <Moon size={20} />}

@@ -35,12 +35,11 @@ export default function Home() {
         </p>
         <a
           className="mt-10"
-          href={siteConfig.resume.href}
+          href={siteConfig.navItems[0].href}
           rel="noopener noreferrer"
-          target="_blank"
         >
           <ResumeButton className="text-sm py-3 px-6">
-            Check out my resume!
+            Check out my profile!
           </ResumeButton>
         </a>
       </div>
