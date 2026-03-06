@@ -6,6 +6,7 @@ import { FolderOpen } from "lucide-react";
 import { otherWorkGroups } from "@/constants/other-works";
 import { ITEMS_PER_LOAD } from "@/constants/settings";
 import ScrollFadeIn from "@/components/animation/ScrollFadeIn";
+import ResumeButton from "@/components/button/ResumeButton";
 
 export const OtherWork = () => {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);
@@ -79,12 +80,12 @@ export const OtherWork = () => {
 
       {otherWorkGroups.length > ITEMS_PER_LOAD && (
         <div className="mt-10">
-          <button
+          <ResumeButton
             className="px-8 py-3 rounded-sm border border-primary text-primary hover:bg-primary/10 transition-all duration-300 text-sm font-mono"
             onClick={handleToggle}
           >
             {isExpanded ? "Show Less" : "Show More"}
-          </button>
+          </ResumeButton>
         </div>
       )}
     </div>

@@ -125,7 +125,7 @@ export default function RootLayout({
           />
         </div>
 
-        <main className="relative z-10">{children}</main>
+        <main className="relative">{children}</main>
         <Sidebar />
       </body>
     </html>

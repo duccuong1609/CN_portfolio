@@ -13,6 +13,7 @@ import {
 import { useEffect, useState } from "react";
 
 import { siteConfig } from "@/constants/site";
+import ResumeButton from "@/components/button/ResumeButton";
 
 export const Contact = () => {
   const [githubStats, setGithubStats] = useState<any>(null);
@@ -68,10 +69,14 @@ export const Contact = () => {
             open to meaningful conversations and will do my best to respond
             promptly.
           </p>
-          <a href="mailto:duccuong16092003@gmail.com">
-            <button className="px-8 py-3 rounded-sm border border-primary text-primary hover:bg-primary/10 transition-all duration-300 font-mono text-sm">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="mailto:duccuong16092003@gmail.com"
+          >
+            <ResumeButton className="px-8 py-3 rounded-sm border border-primary text-primary hover:bg-primary/10 transition-all duration-300 font-mono text-sm">
               Say Hello!
-            </button>
+            </ResumeButton>
           </a>
         </div>
       </div>
