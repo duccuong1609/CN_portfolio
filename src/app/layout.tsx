@@ -2,13 +2,12 @@ import type { Metadata, Viewport } from "next";
 
 import { Fira_Code, Inter } from "next/font/google";
 
-import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { siteConfig } from "@/constants/site";
-import { Sidebar } from "@/components/Sidebar";
 import ScrollAnimation from "@/components/animation/ScrollHide";
 import Beams from "@/components/Beams";
-import ColorBends from "@/components/ColorBends";
+import { Navbar } from "@/components/Navbar";
+import { Sidebar } from "@/components/Sidebar";
+import { siteConfig } from "@/constants/site";
+import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -110,8 +109,8 @@ export default function RootLayout({
         </div>
 
         <div className="block dark:hidden fixed inset-0 -z-10 pointer-events-none">
-          <ColorBends
-            colors={["#f43f5e", "#8b5cf6", "#0ea5e9"]}
+          {/* <ColorBends
+            colors={["#ff5c7a", "#8a5cff", "#00ffd1"]}
             rotation={0}
             speed={0.2}
             scale={1}
@@ -122,7 +121,7 @@ export default function RootLayout({
             noise={0.1}
             transparent
             autoRotate={0}
-          />
+          /> */}
         </div>
 
         <main className="relative">{children}</main>
